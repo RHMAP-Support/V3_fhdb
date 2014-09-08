@@ -7,11 +7,12 @@ call which will return the remote config.
 */
 
 $fh.ready(function() {
+  // Device is ready.
   document.getElementById('list_button').onclick = function() {
 
-  $fh.act(
+  $fh.cloud(
     {
-      act:'list'
+      path:'cloud/list'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -21,13 +22,15 @@ $fh.ready(function() {
       document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
     }
   );
+
+
 };
 
   document.getElementById('deleteall_button').onclick = function() {
 
-  $fh.act(
+  $fh.cloud(
     {
-      act:'deleteall'
+      path:'cloud/deleteall'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -41,9 +44,9 @@ $fh.ready(function() {
 
   document.getElementById('list_lastname_button').onclick = function() {
 
-  $fh.act(
+  $fh.cloud(
     {
-      act:'listLastName'
+      path:'cloud/listLastName'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -58,9 +61,9 @@ $fh.ready(function() {
 
   document.getElementById('addjim_button').onclick = function() {
 
-  $fh.act(
+  $fh.cloud(
     {
-      act:'addMrJones'
+      path:'cloud/addMrJones'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -74,9 +77,9 @@ $fh.ready(function() {
 
   document.getElementById('addjack_button').onclick = function() {
 
-  $fh.act(
+  $fh.cloud(
     {
-      act:'addMrSmith'
+      path:'cloud/addMrSmith'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -87,7 +90,5 @@ $fh.ready(function() {
     }
   );
 };
-
-
 
 });
